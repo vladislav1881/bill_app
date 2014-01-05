@@ -49,6 +49,7 @@ en:
   settings: Settings
   sign_out: Sign out
   users: Users
+  account: Account
 
 #sign in
   
@@ -97,6 +98,11 @@ en:
 
   followings: following
   followers: followers
+
+#Followers showing
+
+  followings_s: following
+  followers_s: followers
 
   
 

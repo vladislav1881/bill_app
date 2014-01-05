@@ -99,6 +99,11 @@ en:
   followings: following
   followers: followers
 
+#Followers showing
+
+  followings_s: Following
+  followers_s: Followers
+
   
 
 
