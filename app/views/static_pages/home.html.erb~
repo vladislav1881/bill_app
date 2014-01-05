@@ -5,11 +5,14 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
     <div class="span8">
-      <h3>Micropost Feed</h3>
+      <h3><%=t :micropost_feed %></h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
@@ -18,14 +21,14 @@
     <h1>Billiard App</h1>
 
     <h2>
-      This is the home page for the best Billiard App ever!
+      <%=t :welcome %>
     </h2>
 
-    <%= link_to "Sign up now!", signup_path,
+    <%= link_to t(:sign_up), signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>
 
-  <%= link_to image_tag("/images/vbil.jpeg", alt: "Enjoy Game"), 'http://fbsnso.ru' %>
+  <%= link_to image_tag("/images/vbil.jpeg", alt: "Enjoy Game") %>
 <% end %>
 
 

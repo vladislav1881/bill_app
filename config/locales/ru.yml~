@@ -1,0 +1,85 @@
+ru:
+  #static pages
+
+  micropost_feed: Лента новостей
+  welcome: Добро пожаловать в мир бильярда! 
+  sign_up: Зарегистрируйся сейчас!
+
+  about_us: О нас
+  about_text: Нам кажется, что наши фотографии лучшего всего расскажут Вам о нас:)
+
+  contact_page: Контакты
+  my_contacts: "Наши контакты:"
+
+  call_me: По всем интересующим вопросам обращайтесь по телефону 8-913-913-18-81
+
+#footer
+
+  about: О проекте
+  contact: Контакты
+  news: Новости
+
+#header
+
+  home: Главная
+  help: Помощь
+  sign_in: Вход
+  profile: Профиль
+  settings: Настройки
+  sign_out: Выход
+  users: Игроки
+  account: Я
+
+#sign in
+  
+  email: Почта	
+  password: Пароль
+  new_user?: Новый игрок?
+
+#sign up
+  
+  create_acc: Создать аккаунт
+  name: Имя
+  pass_conf: Подтверждение пароля
+
+#Profile updating
+
+  prof_update: Изменить данные профиля
+  save_chang: Сохранить изменения
+
+#Follow
+
+  follow: Подписаться
+
+#Unfollow
+
+  unfollow: Удалить подписку
+
+#Index
+
+  all_users: Все игроки
+
+#Show
+
+  microposts: Публикации
+
+#Show follow
+ 
+  microposts_s: "Публикации:"
+  view_prof: мой профиль
+
+#Microposts
+
+  post: Опубликовать
+  compose_new: Создайте новую публикацию...
+
+#Stats
+
+  followings: ваши подписки
+  followers: подписчики
+
+  
+
+
+  
+  

@@ -7,7 +7,7 @@
     <ul>
       <li><%= link_to t(:about),   about_path %></li>
       <li><%= link_to t(:contact), contact_path %></li>
-      <li><a href="http://vbilliard.ru/"><%=t :news %></a></li>
+      <li><a href="http://vbilliard.ru/">News</a></li>
     </ul>
   </nav>
 </footer>

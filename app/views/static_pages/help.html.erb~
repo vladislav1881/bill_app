@@ -1,6 +1,6 @@
 <%provide(:title, 'Help')%>
 <h1><%=t :help%></h1>
-  <p><%=t :call_me%> </p>
+  <p> <%=t :call_me %> </p>
 
 
 
