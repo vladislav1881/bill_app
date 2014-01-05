@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the World of Academ Billiard"	
@@ -47,14 +47,14 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = t(:followings)
+    @title = t(:followings_s)
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = t(:followers)
+    @title = t(:followers_s)
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :avatar)
     end
 
     # Before filters

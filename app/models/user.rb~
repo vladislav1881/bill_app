@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
                                    class_name:  "Relationship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
+
+  has_attached_file :avatar, :styles => { :medium => "130x130>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 	
   before_save { self.email = email.downcase }
   before_create :create_remember_token
@@ -17,8 +19,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 
   def feed
-    # This is preliminary. See "Following users" for the full implementation.
-    Micropost.where("user_id = ?", id)
+    Micropost.from_users_followed_by(self)
   end  
 
   def following?(other_user)

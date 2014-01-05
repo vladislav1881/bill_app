@@ -2,7 +2,7 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <%= gravatar_for @user %>
+      <%= image_tag @user.avatar.url %>
       <h1><%= @user.name %></h1>
       <span><%= link_to t(:view_prof), @user %></span>
       <span><b><%=t :microposts_s %></b> <%= @user.microposts.count %></span>
@@ -28,3 +28,4 @@
     <% end %>
   </div>
 </div>
+

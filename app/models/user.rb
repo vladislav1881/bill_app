@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
                                    class_name:  "Relationship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
+
+  has_attached_file :avatar, :styles => { :medium => "130x130>", :thumb => "100x100>" }, :default_url => "/images/missing.png"
 	
   before_save { self.email = email.downcase }
   before_create :create_remember_token
