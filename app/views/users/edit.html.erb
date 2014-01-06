@@ -7,7 +7,7 @@
       <%= render 'fields', f: f %>
       <%= f.submit t(:save_chang), class: "btn btn-large btn-primary" %>
       <div>
-        <%= image_tag @user.avatar.url %>
+        <%= image_tag @user.avatar.url(:thumb) %>
         <%= f.file_field :avatar %>
       </div>
     <% end %>

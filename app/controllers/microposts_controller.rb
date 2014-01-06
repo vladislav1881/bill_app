@@ -13,6 +13,17 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def show
+    @micropost = Micropost.find(params[:id])
+  end
+  
+  def add_comment
+    @micropost = Micropost.find(params[:id])
+    @comment = Comment.build_from( @micropost, current_user.id, params[:comment][:body] )
+    @comment.save
+    redirect_to @micropost
+  end
+
   def destroy
     @micropost.destroy
     redirect_to root_url

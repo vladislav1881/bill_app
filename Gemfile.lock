@@ -5,6 +5,16 @@ GIT
     database_cleaner (1.2.0)
 
 GIT
+  remote: git://github.com/elight/acts_as_commentable_with_threading.git
+  revision: 108446b1893a3ff8075ce4a8a8542d2156037311
+  branch: master
+  specs:
+    acts_as_commentable_with_threading (1.1.2)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      awesome_nested_set (>= 2.0)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 6a6f8552819596fe0596e8d1edbdb47159a8d74b
   specs:
@@ -43,6 +53,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    awesome_nested_set (2.1.6)
+      activerecord (>= 3.0.0)
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
     bootstrap-sass (2.3.2.0)
@@ -204,6 +216,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  acts_as_commentable_with_threading!
   bcrypt-ruby (= 3.1.2)
   bootstrap-sass (= 2.3.2.0)
   bootstrap-will_paginate (= 0.0.9)

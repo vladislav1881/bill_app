@@ -7,8 +7,10 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
 
-  has_attached_file :avatar, :styles => { :medium => "130x130>", :thumb => "100x100>" }, :default_url => "/images/missing.png"
-	
+  has_attached_file :avatar, :styles => { :medium => "130x130>", :thumb => "100x100>", xs: "50x50#", xxs: "30x30#" }, 
+                    :default_url => "/images/missing.png"
+# to implement it with new avatars run in console: User.all.each { |u| u.avatar.reprocess! if u.avatar? }
+
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   validates :name, presence: true, length: { maximum: 50 }

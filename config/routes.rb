@@ -5,7 +5,11 @@ BillApp::Application.routes.draw do
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy, :show] do 
+    member do
+      post :add_comment
+    end
+  end
   resources :relationships, only: [:create, :destroy]
 
   root  'static_pages#home'
