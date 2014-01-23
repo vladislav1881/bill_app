@@ -10,8 +10,8 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'acts_as_commentable_with_threading', github: 'elight/acts_as_commentable_with_threading', branch: 'master'
+gem "paperclip"
+gem 'acts_as_commentable_with_threading' #, github: 'elight/acts_as_commentable_with_threading', branch: 'master'
 
 gem 'russian'
 
@@ -32,7 +32,7 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.0'
   gem 'cucumber-rails', '1.4.0', :require => false
-  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'database_cleaner'
   gem 'guard-rspec', require: false
 
   # Uncomment this line on OS X.
