@@ -11,6 +11,8 @@ BillApp::Application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
+  resources :matches
+  resources :ratings, only: :index
 
   root  'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'

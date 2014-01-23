@@ -1,4 +1,5 @@
 <%= link_to image_tag(current_user.avatar.url(:medium)), current_user %>
+<%= current_user.rating %>
 <h1>
   <%= current_user.name %>
 </h1>
@@ -6,6 +7,6 @@
   <%= link_to t(:view_prof), current_user %>
 </span>
 <span>
-  <%= pluralize(current_user.microposts.count, t(:microposts)) %>
+  <%= t(:microposts_count, count: current_user.microposts.count) %>
 </span>
 

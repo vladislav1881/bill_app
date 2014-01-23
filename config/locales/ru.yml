@@ -1,4 +1,16 @@
 ru:
+  statuses:
+    planned: Запланирован
+    playing: В процессе
+    finished: Завершён
+    
+  # counts
+  microposts_count:
+    zero: "Нет публикаций"
+    one: "%{count} публикация"
+    few: "%{count} публикации"
+    many: "%{count} публикаций"
+
   #static pages
 
   micropost_feed: Лента новостей
@@ -11,7 +23,7 @@ ru:
   contact_page: Контакты
   my_contacts: "Наши контакты:"
 
-  call_me: По всем интересующим вопросам обращайтесь по телефону 8-913-913-18-81
+  call_me: По всем вопросам обращайтесь по телефону 8-913-913-18-81
 
 #footer
 
@@ -29,6 +41,7 @@ ru:
   sign_out: Выход
   users: Игроки
   account: Я
+  matches: Игры
 
 #sign in
   
@@ -78,8 +91,22 @@ ru:
   followings: подписки
   followers: подписчики
 
-  
+  number_of_comments: Комментарии
+  delete: удалить
 
+  #Matches
 
-  
-  
+  player1: Игрок 1
+  player2: Игрок 2
+  status: Статус
+  score: Счет
+
+  edit: изменить
+  create_new_match: новая игра
+
+  #Rating
+
+  rating: Рейтинг
+  robustness: опыт
+  player: Игрок
+

@@ -1,5 +1,6 @@
 <%= render 'micropost', micropost: @micropost %>
 <% @micropost.comment_threads.each do |c| %>
+  <%= link_to image_tag(c.user.avatar(:xs)), c.user %>
   <p><%= c.body %></p>
 <% end %>
 <%= form_tag add_comment_micropost_path(@micropost), method: :post do %>

@@ -1,0 +1,44 @@
+- provide(:title, 'Matches')
+%h1 
+  = t :matches
+
+%a#show-newm{:href => "#"} 
+  = t :create_new_match
+%section
+  = render 'matches/form'
+
+= will_paginate
+
+%table.table.table-condensed.users
+  %tr
+    %th 
+      = t :player1
+    %th 
+      = t :player2
+    %th
+      = t :status
+    %th
+      = t :score
+    - if current_user.admin?
+      %th
+    - if current_user.admin? 
+      %th
+
+  - @matches.each do |m|
+    %tr
+      %td
+        = m.initiator.name
+      %td
+        = m.invited.name
+      %td
+        = t("statuses.#{m.status}")
+      %td
+        = m.wins
+        \: #{m.loses}
+      - if current_user.admin?
+        %td
+          = link_to t(:delete), m, method: :delete, data: { confirm: "You sure?" }
+        %td
+          - if current_user.admin? && m.status != "finished"
+            = link_to t(:edit), edit_match_path(m)
+= will_paginate

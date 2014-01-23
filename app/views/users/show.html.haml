@@ -1,0 +1,43 @@
+- provide(:title, @user.name)
+.row
+  %aside.span4
+    %section
+      %h1
+        = image_tag @user.avatar.url
+        = @user.name
+    %section
+      = render 'shared/stats'
+    = render 'follow_form' if signed_in?
+    - if @user.microposts.any?
+      %h3
+        = t :microposts
+        (#{@user.microposts.count})
+      %ol.microposts
+        = render @microposts
+      = will_paginate @microposts
+  .span8
+    %section
+      %p= link_to t(:create_new_match), new_match_path, class: 'btn'
+
+      - if @user.matches.any?
+        %h3
+          #{t(:matches)} (#{@user.matches.count})
+        %table.table.table-condensed.matches
+          - @user.matches.each do |m|
+            %tr
+              %td
+                = m.initiator.name
+              %td
+                = m.invited.name
+              %td
+                = m.status
+              %td
+                = m.wins
+                \: #{m.loses}
+              %td
+                - if m.status != "finished"
+                  = link_to t(:edit), edit_match_path(m)
+              %td
+                - if m.status != "finished"
+                  = link_to t(:delete), m, method: :delete, |
+                  data: { confirm: "You sure?" }        |

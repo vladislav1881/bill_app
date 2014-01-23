@@ -26,6 +26,8 @@ describe User do
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
+  it { should respond_to(:matches) }
+  it { should respond_to(:rating) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -197,6 +199,74 @@ describe User do
 
       it { should_not be_following(other_user) }
       its(:followed_users) { should_not include(other_user) }
+    end
+  end
+
+
+  context "[rating]" do
+    let!(:user) { FactoryGirl.create(:user) }
+    let!(:other_user) { FactoryGirl.create(:user) }
+
+    describe "#corrected_robustness" do
+      it "returns 30 if robustness less or equals than 30" do
+        expect(user.corrected_robustness).to eq(30)
+      end
+
+      it "returns robustness if robustness more than 30 and less than 350" do
+        user.robustness = 130
+        expect(user.corrected_robustness).to eq(130)
+      end
+
+      it "returns 350 if robustness more than 350" do
+        user.robustness = 700
+        expect(user.corrected_robustness).to eq(350)
+      end
+    end
+
+    describe "#corrected_rating" do
+      it "returns 450 if rating equals to 0" do
+        expect(user.corrected_rating).to eq(450)
+      end
+
+      it "returns robustness if robustness more than 30 and less than 350" do
+        user.rating = 130
+        expect(user.corrected_rating).to eq(130)
+      end
+    end
+
+    describe "probability" do
+      it "returns 1/2 if delta in rating equals 0" do
+        user.rating = 450
+        other_user.rating = 450
+        expect(user.probability(other_user)).to eq(0.5)
+      end
+
+      it "returns 2/3 if delta in rating equals 100" do
+        user.rating = 550
+        other_user.rating = 450
+        expect(user.probability(other_user)).to eq(BigDecimal.new("0.666667"))
+      end
+
+      it "returns 1/3 if delta in rating equals -100" do
+        user.rating = 450
+        other_user.rating = 550
+        
+        expect(user.probability(other_user)).to eq(BigDecimal.new("0.333333"))
+      end
+    end
+
+
+    describe "#update_rating_by" do
+      it "increases [corrected] rating by passed value" do
+        user.update_rating_by(100)
+        expect(user.rating).to eq(550)
+      end
+
+      it "increases rating by passed value" do
+        user.rating = 1 
+        user.update_rating_by(100)
+        expect(user.rating).to eq(101)
+      end
     end
   end
 end

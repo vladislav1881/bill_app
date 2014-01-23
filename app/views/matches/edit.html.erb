@@ -1,0 +1,13 @@
+<% provide(:title, "Edit match") %>
+<h1>Edit match</h1>
+
+<div class="row">
+  <div class="span6 offset3" id="showm">
+    <%= form_for @match do |f| %>
+
+      <%= render 'fields', f: f %>
+   
+      <%= f.submit 'Update', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

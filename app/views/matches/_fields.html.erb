@@ -1,0 +1,12 @@
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.label :invited_id %>
+<%= f.collection_select :invited_id, current_user.followed_users, :id, :name %>
+
+<%= f.label :status %>
+<%= f.select :status, ['planned', 'playing', 'finished'] %>
+
+<%= f.label :wins %>
+<%= f.number_field :wins %>
+
+<%= f.label :loses %>
+<%= f.number_field :loses %>

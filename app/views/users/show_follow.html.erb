@@ -5,7 +5,7 @@
       <%= image_tag @user.avatar.url %>
       <h1><%= @user.name %></h1>
       <span><%= link_to t(:view_prof), @user %></span>
-      <span><b><%=t :microposts_s %></b> <%= @user.microposts.count %></span>
+      <span><b><%=t :micropos %></b> <%= @user.microposts.count %></span>
     </section>
     <section>
       <%= render 'shared/stats' %>

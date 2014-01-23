@@ -1,0 +1,21 @@
+- provide(:title, 'All users')
+
+%h1
+  = t :all_users
+
+= will_paginate
+
+%table.table.table-condensed.users
+  %tr
+    %th 
+      = t :rating
+      %small.muted 
+        = t :robustness
+    %th 
+      = t :player
+    - if current_user.admin?
+      %th
+
+  = render @users
+
+= will_paginate

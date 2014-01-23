@@ -20,6 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
+  microposts_count:
+    zero: "No microposts публикаций"
+    one: "%{count} micropost"
+    many: "%{count} microposts"
+
+
 #static pages
 
   micropost_feed: Mircopost Feed
@@ -50,6 +57,7 @@ en:
   sign_out: Sign out
   users: Users
   account: Account
+  matches: Matches
 
 #sign in
   
@@ -86,7 +94,7 @@ en:
 
 #Show follow
  
-  microposts_s: "Microposts:"
+  micropos: "Microposts:"
   view_prof: view my profile
 
 #Microposts
@@ -104,8 +112,22 @@ en:
   followings_s: Following
   followers_s: Followers
 
-  
+  number_of_comments: "Number of comments:"
+  delete: delete
 
+  #Matches
 
-  
-  
+  player1: Player 1
+  player2: Player 2
+  status: Status
+  score: Score
+
+  edit: edit
+  create_new_match: create new match
+
+  #Rating
+
+  rating: Rating
+  robustness: robustness
+  player: User 
+

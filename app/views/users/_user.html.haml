@@ -1,0 +1,11 @@
+%tr
+  %td
+    = user.rating
+    %small.muted
+      = user.robustness
+  %td
+    = image_tag user.avatar.url(:xs)
+    = link_to user.name, user
+  %td
+    - if current_user.admin? && !current_user?(user)
+      = link_to t(:delete), user, method: :delete, data: { confirm: "You sure?" }

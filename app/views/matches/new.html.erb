@@ -1,0 +1,14 @@
+<% provide(:title, 'New Match') %>
+<h1>New Match</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(Match.new) do |f| %>
+
+      <%= render 'fields', f: f %>
+   
+      <%= f.submit 'Save', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

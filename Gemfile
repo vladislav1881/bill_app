@@ -11,6 +11,10 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'acts_as_commentable_with_threading', github: 'elight/acts_as_commentable_with_threading', branch: 'master'
 
+gem 'russian'
+
+gem 'haml-rails'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
@@ -27,6 +31,7 @@ group :test do
   gem 'factory_girl_rails', '4.2.0'
   gem 'cucumber-rails', '1.4.0', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'guard-rspec', require: false
 
   # Uncomment this line on OS X.
   # gem 'growl', '1.0.3'

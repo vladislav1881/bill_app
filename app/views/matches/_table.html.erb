@@ -1,0 +1,11 @@
+<tr>
+  <td><%= m.initiator.name %></td>
+  <td><%= m.invited.name %></td>
+  <td><%= m.status %></td>
+  <td><%= m.wins %>:<%= match.loses %></td>
+  <% if m.status != "finished" %> 
+    <td>
+      <%= link_to 'edit', edit_match_path(match)%>
+    </td>
+  <% end %> 
+</tr>

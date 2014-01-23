@@ -14,4 +14,8 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :match do
+    status 'planned'
+  end
 end
