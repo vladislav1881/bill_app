@@ -1,8 +1,0 @@
-<%provide(:title, 'Contact')%>
-<h1><%=t :contact_page %></h1>
-  <p><%=t my_contacts %></p>
-  
-  <p> +7-913-913-18-81</p>
-  
-  <p> va.kuznetsov1881@gmail.com </p>
-
