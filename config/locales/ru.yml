@@ -104,6 +104,10 @@ ru:
   edit: изменить
   create_new_match: новая игра
 
+  invited_id: Соперник
+  wins: Выйгранные пратии
+  loses: Проигранные партии
+
   #Rating
 
   rating: Рейтинг

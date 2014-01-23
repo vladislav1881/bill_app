@@ -1,12 +1,16 @@
 <%= render 'shared/error_messages', object: f.object %>
-<%= f.label :invited_id %>
+
+<%= f.label t(:invited_id) %>
 <%= f.collection_select :invited_id, current_user.followed_users, :id, :name %>
 
-<%= f.label :status %>
-<%= f.select :status, ['planned', 'playing', 'finished'] %>
+<%= f.label t(:status) %>
+<%= f.select :status, %w{ planned playing finished }.map { |s| t("statuses.#{s}") } %>
 
-<%= f.label :wins %>
+<%= f.label t(:wins) %>
 <%= f.number_field :wins %>
 
-<%= f.label :loses %>
+<%= f.label t(:loses) %>
 <%= f.number_field :loses %>
+
+
+t("statuses.#{m.status}")

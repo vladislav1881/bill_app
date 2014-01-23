@@ -125,6 +125,8 @@ en:
   edit: edit
   create_new_match: create new match
 
+  invited_id: Partner
+
   #Rating
 
   rating: Rating
