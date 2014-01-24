@@ -36,9 +36,6 @@ class Match < ActiveRecord::Base
 
       initiator.save
       invited.save
-
-puts initiator.errors.inspect      
-puts invited.errors.inspect
     end
   end
   

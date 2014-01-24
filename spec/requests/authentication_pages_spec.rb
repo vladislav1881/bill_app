@@ -20,7 +20,6 @@ describe "Authentication" do
       it { should have_title('Sign in') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
       it { should_not have_link('Matches') }
-      it { should_not have_link('Rating') }
       it { should_not have_link('Profile') }
       it { should_not have_link('Settings') }
       
@@ -37,7 +36,6 @@ describe "Authentication" do
       it { should have_title(user.name) }
       it { should have_link('Users',        href: users_path) }
       it { should have_link('Matches',      href: matches_path) }
-      it { should have_link('Rating',       href: ratings_path) }
       it { should have_link('Profile',      href: user_path(user)) }
       it { should have_link('Settings',     href: edit_user_path(user)) }
       it { should have_link('Sign out',     href: signout_path) }
