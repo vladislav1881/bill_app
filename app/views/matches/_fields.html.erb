@@ -4,7 +4,7 @@
 <%= f.collection_select :invited_id, current_user.followed_users, :id, :name %>
 
 <%= f.label t(:status) %>
-<%= f.select :status, %w{ planned playing finished }.map { |s| t("statuses.#{s}") } %>
+<%= f.select :status, %w{ planned playing finished }.map { |s| [ t("statuses.#{s}"), s ] } %>
 
 <%= f.label t(:wins) %>
 <%= f.number_field :wins %>

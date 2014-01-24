@@ -1,4 +1,5 @@
 ru:
+
   statuses:
     planned: Запланирован
     playing: В процессе
@@ -60,9 +61,13 @@ ru:
   prof_update: Изменить данные профиля
   save_chang: Сохранить изменения
 
+
+  followings_s: Подписки
+  followers_s: Подписчики
 #Follow
 
   follow: Подписаться
+
 
 #Unfollow
 
@@ -111,6 +116,6 @@ ru:
   #Rating
 
   rating: Рейтинг
-  robustness: опыт
+  robustness: сыграно партий
   player: Игрок
 
