@@ -1,0 +1,7 @@
+- if @photo.micropost.present?
+  %div
+    = link_to @photo.micropost.content, @photo.micropost
+
+%div
+  = image_tag @photo.image.url(:large)
+

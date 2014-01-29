@@ -16,6 +16,7 @@ gem 'acts_as_commentable_with_threading' #, github: 'elight/acts_as_commentable_
 gem 'russian'
 
 gem 'haml-rails'
+gem "cocoon"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

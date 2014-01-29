@@ -41,3 +41,5 @@
                 - if m.status != "finished"
                   = link_to t(:delete), m, method: :delete, |
                   data: { confirm: "You sure?" }        |
+              %td
+                = l(m.created_at, format: '%d.%m.%Y %H:%M')

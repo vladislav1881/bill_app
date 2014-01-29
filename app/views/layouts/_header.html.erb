@@ -5,10 +5,10 @@
   	  <nav>
   		  <ul class="nav pull-right">
   		  	<li><%= link_to t(:home), root_path %></li>
-          <li><%= link_to t(:help), help_path %></li>
           <% if signed_in? %>
             <li><%= link_to t(:users), users_path %></li>
             <li><%= link_to t(:matches), matches_path %></li>
+            <li><%= link_to t(:contact), contact_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <%=t :account %> <b class="caret"></b>

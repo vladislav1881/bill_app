@@ -1,0 +1,11 @@
+= form_for(@micropost) do |f|
+  = render 'shared/error_messages', object: f.object
+  .field
+    = f.text_area :content, placeholder: t(:compose_new)
+  #photos
+    = f.fields_for :photos do |photo|
+      = render 'photos/photo_fields', :f => photo
+    .links.pull-right
+      = link_to_add_association content_tag(:i, '', class: 'icon-camera', title: t(:attach_photo)), f, :photos
+  
+  = f.submit t(:post), class: "btn btn-large btn-primary"

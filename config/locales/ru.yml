@@ -92,6 +92,8 @@ ru:
 
   post: Опубликовать
   compose_new: Создайте новую публикацию...
+  attach_photo: 'Прикрепить фотографию'
+  remove_photo: 'Удалить фотографию'
 
 #Stats
 
@@ -122,4 +124,8 @@ ru:
   rating: Рейтинг
   robustness: сыграно партий
   player: Игрок
+
+  time:
+    formats:
+      short: "%d.%m.%Y %H:%M"
 

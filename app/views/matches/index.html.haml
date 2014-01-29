@@ -38,7 +38,7 @@
         = m.wins
         \: #{m.loses}
       %td
-        = m.created_at
+        = l(m.created_at, format: '%d.%m.%Y %H:%M')
       - if current_user.admin?
         %td
           = link_to t(:delete), m, method: :delete, data: { confirm: "You sure?" }
