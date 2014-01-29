@@ -19,6 +19,8 @@
       = t :status
     %th
       = t :score
+    %th 
+      = t :date
     - if current_user.admin?
       %th
     - if current_user.admin? 
@@ -35,6 +37,8 @@
       %td
         = m.wins
         \: #{m.loses}
+      %td
+        = m.created_at
       - if current_user.admin?
         %td
           = link_to t(:delete), m, method: :delete, data: { confirm: "You sure?" }
