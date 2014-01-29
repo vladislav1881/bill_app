@@ -11,7 +11,7 @@
     - if @user.microposts.any?
       %h3
         = t :microposts
-        (#{@user.microposts.count})
+        %small= @user.microposts.count
       %ol.microposts
         = render @microposts
       = will_paginate @microposts
@@ -21,14 +21,15 @@
 
       - if @user.matches.any?
         %h3
-          #{t(:matches)} (#{@user.matches.count})
+          = t(:matches)
+          %small= @user.matches.count
         %table.table.table-condensed.matches
           - @user.matches.each do |m|
             %tr
               %td
-                = m.initiator.name
+                = link_to m.initiator.name, m.initiator
               %td
-                = m.invited.name
+                = link_to m.invited.name, m.invited
               %td
                 = t("statuses.#{m.status}")
               %td
