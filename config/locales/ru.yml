@@ -6,6 +6,8 @@ ru:
     finished: Завершён
     
   # counts
+  posted: Размещено
+  ago: "назад."
   microposts_count:
     zero: "Нет публикаций"
     one: "%{count} публикация"
@@ -113,6 +115,7 @@ ru:
   wins: Выйгранные пратии
   loses: Проигранные партии
   date: Дата и время встречи
+  save: Сохранить
 
   #Rating
 

@@ -5,7 +5,7 @@
     </span>
     <span class="content"><%= feed_item.content %></span>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+      <%= t :posted %> <%= time_ago_in_words(feed_item.created_at) %> <%= t :ago %>
     </span>
     <span><%= link_to "#{t(:number_of_comments)} (#{feed_item.comment_threads.count})", feed_item %></span>
   <% if current_user?(feed_item.user) %>

@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  posted: Posted
+  ago: "ago."
 
   microposts_count:
     zero: "No microposts публикаций"
@@ -127,6 +129,7 @@ en:
 
   invited_id: Partner
   date: Date of match
+  save: Save
 
   #Rating
 
