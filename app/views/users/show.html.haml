@@ -2,9 +2,8 @@
 .row
   %aside.span4
     %section
-      %h1
-        = image_tag @user.avatar.url(:large)
-        = @user.name
+      = image_tag @user.avatar.url(:large)
+      %h1= @user.name
     %section
       = render 'shared/stats'
     = render 'follow_form' if signed_in?
