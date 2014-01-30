@@ -1,6 +1,10 @@
 <% @user ||= current_user %>
 <div class="stats">
   <a href="<%= users_path %>">
+    <h1><%= @user.place %></h1>
+    место
+  </a>
+  <a href="<%= users_path %>">
     <strong><%= @user.rating %></strong>
     рейтинг
   </a>

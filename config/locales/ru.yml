@@ -1,4 +1,9 @@
 ru:
+  activerecord:
+    attributes:
+      photo:
+        description: Описание
+        image: Файл фотографии
 
   statuses:
     planned: Запланирован
@@ -45,6 +50,8 @@ ru:
   users: Игроки
   account: Я
   matches: Игры
+  photos: Фотографии
+ 
 
 #sign in
   
@@ -121,6 +128,7 @@ ru:
 
   #Rating
 
+  place: Место
   rating: Рейтинг
   robustness: сыграно партий
   player: Игрок

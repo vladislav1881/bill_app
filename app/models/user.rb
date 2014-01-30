@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   #validates :password, length: { minimum: 6 }
   
   def matches
-    matches_by_user_initiator + matches_by_user_invited
+    (matches_by_user_initiator + matches_by_user_invited).sort_by(&:created_at).reverse
   end
 
   def feed
@@ -81,6 +81,14 @@ class User < ActiveRecord::Base
 
   def update_rating_by(delta)
     self.rating = corrected_rating + delta
+  end
+
+  def place
+    if rating == 0
+      0
+    else
+      User.order('rating DESC').index(self) + 1
+    end
   end
 
   private

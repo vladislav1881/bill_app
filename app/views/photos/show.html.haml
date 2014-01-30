@@ -1,7 +1,4 @@
-- if @photo.micropost.present?
-  %div
-    = link_to @photo.micropost.content, @photo.micropost
+= image_tag @photo.image.url(:large)
 
-%div
-  = image_tag @photo.image.url(:large)
+= render 'photos/photo_description', photo: @photo
 

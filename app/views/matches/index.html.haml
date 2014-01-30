@@ -29,9 +29,9 @@
   - @matches.each do |m|
     %tr
       %td
-        = m.initiator.name
+        = link_to m.initiator.name, m.initiator
       %td
-        = m.invited.name
+        = link_to m.invited.name, m.invited
       %td
         = t("statuses.#{m.status}")
       %td

@@ -1,23 +1,10 @@
-%h1 Listing photos
+%h1 Фотографии
 
-%table
-  %tr
-    %th Description
-    %th User
-    %th Micropost
-    %th
-    %th
-    %th
+.actions(style="margin-bottom:15px")
+  = link_to 'Новая фотография', new_photo_path, class: 'btn'
 
+%ul.thumbnails
   - @photos.each do |photo|
-    %tr
-      %td= photo.description
-      %td= photo.user
-      %td= photo.micropost
-      %td= link_to 'Show', photo
-      %td= link_to 'Edit', edit_photo_path(photo)
-      %td= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %li.span2
+      = link_to image_tag(photo.image.url(:medium_square)), photo
 
-%br
-
-= link_to 'New Photo', new_photo_path
