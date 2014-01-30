@@ -1,9 +1,9 @@
 .media
   = link_to photo.user, class: 'pull-left' do
-    = image_tag photo.user.avatar.url(:xs), alt: photo.user.name, lass: 'media-object'
+    = image_tag photo.user.avatar.url(:xs), alt: photo.user.name, lass: 'media-object' rescue nil
   .media-body
     %h5.media-heading
-      = link_to photo.user.name, photo.user
+      = link_to photo.user.name, photo.user rescue nil
     - if photo.micropost.present?
       = link_to photo.micropost.content, photo.micropost
     - else
