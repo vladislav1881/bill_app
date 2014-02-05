@@ -73,8 +73,6 @@ describe "Static pages" do
     visit root_path
     click_link "About"
     expect(page).to have_title(full_title('About'))
-    click_link "Help"
-    expect(page).to have_title(full_title('Help'))
     click_link "Contact"
     expect(page).to have_title(full_title('Contact'))
     click_link "Home"
@@ -82,5 +80,8 @@ describe "Static pages" do
     expect(page).to have_title(full_title('Sign up'))
     click_link "Billiard app"
     expect(page).to have_title(full_title(''))
+    click_link "Sign in"
+    expect(page).to have_title(full_title('Sign in'))
   end
 end
+

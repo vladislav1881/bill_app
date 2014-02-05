@@ -2,10 +2,7 @@
 %h1 
   = t :matches
 
-%a#show-newm{:href => "#"} 
-  = t :create_new_match
-%section
-  = render 'matches/form'
+%p= link_to t(:create_new_match), new_match_path, class: 'btn'
 
 = will_paginate
 

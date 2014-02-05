@@ -24,8 +24,8 @@ describe "User pages" do
       it { should have_selector('div.pagination') }
 
       it "should list each user" do
-        User.paginate(page: 1).each do |user|
-          expect(page).to have_selector('li', text: user.name)
+        User.order("rating DESC").paginate(page: 1).each do |user|
+          expect(page).to have_selector('td a', text: user.name)
         end
       end
     end
@@ -54,8 +54,10 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let(:other_user) { FactoryGirl.create(:user) }
     let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
+    let!(:mtch) {FactoryGirl.create(:match, initiator: user, invited: other_user)}
 
     before { visit user_path(user) }
 
@@ -67,9 +69,15 @@ describe "User pages" do
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
     end
+
+    describe "matches" do
+      it { should have_content("Matches") }
+      it { should have_content(user.matches.count) }  
+      it { should have_content(mtch.initiator.name) }
+      it { should have_link("Create New Match") }
+    end
     
     describe "follow/unfollow buttons" do
-      let(:other_user) { FactoryGirl.create(:user) }
       before { sign_in user }
 
       describe "following a user" do
