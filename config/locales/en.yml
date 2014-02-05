@@ -24,9 +24,9 @@ en:
   ago: "ago."
 
   microposts_count:
-    zero: "No microposts публикаций"
+    zero: "No microposts"
     one: "%{count} micropost"
-    many: "%{count} microposts"
+    other: "%{count} microposts"
 
 
 #static pages

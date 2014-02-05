@@ -6,7 +6,7 @@
       %h1= @user.name
     %section
       = render 'shared/stats'
-    = render 'follow_form' if signed_in?
+    = render 'follow_form', user: @user if signed_in?
     - if @user.microposts.any?
       %h3
         = t :microposts
