@@ -12,6 +12,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem "paperclip"
 gem 'acts_as_commentable_with_threading' #, github: 'elight/acts_as_commentable_with_threading', branch: 'master'
+gem "auto_html"
 
 gem 'russian'
 

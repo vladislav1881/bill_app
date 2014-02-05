@@ -2,7 +2,7 @@
   = link_to image_tag(feed_item.user.avatar(:xs)), feed_item.user
   %span.user
     = link_to feed_item.user.name, feed_item.user
-  %span.content= feed_item.content
+  %span.content= feed_item.content_html
   .photos
     - feed_item.photos.each do |photo|
       = link_to_photo photo
