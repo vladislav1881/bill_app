@@ -36,7 +36,7 @@ describe "Match pages" do
     let(:submit) { "Save" }
 
     describe "with invalid data" do
-      before { select "Finished",           from: "match_status" }
+      before { select "finished",           from: "match_status" }
       it "should not create a match" do 
         expect { click_button submit }.not_to change(Match, :count)
       end
@@ -46,7 +46,7 @@ describe "Match pages" do
        before do
         puts page.body
         select other_user.name,        from: "match_invited_id"
-        select "Planned",           from: "match_status"
+        select "finished",           from: "match_status"
         fill_in "match_wins",       with: 5
         fill_in "match_loses",      with: 5  
       end 

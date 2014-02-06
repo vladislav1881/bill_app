@@ -28,6 +28,10 @@ en:
     one: "%{count} micropost"
     other: "%{count} microposts"
 
+  statuses:
+    planned: planned
+    playing: playing
+    finished: finished
 
 #static pages
 
@@ -128,6 +132,8 @@ en:
   create_new_match: Create New Match
 
   invited_id: Partner
+  wins: wins
+  loses: loses
   date: Date of match
   save: Save
 

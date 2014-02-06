@@ -1,6 +1,39 @@
 require 'spec_helper'
 
 describe Match do
+
+  context "creating" do
+    it "creates new match" do
+      current_user = FactoryGirl.create(:user)
+      other_user = FactoryGirl.create(:user)
+      params = { 
+        status: 'finished', 
+        wins: 4, 
+        loses: 1, 
+        invited_id: other_user.id 
+      }
+
+      expect do 
+        match = Match.new(params)
+        match.initiator = current_user
+        match.save
+
+        puts "================================="
+        puts match.inspect
+        puts match.valid?
+        puts match.errors.inspect
+
+        puts match.initiator.inspect
+        puts match.initiator.errors.inspect
+        puts match.invited.inspect
+        puts match.invited.errors.inspect
+
+        puts "================================="
+
+      end.to change { Match.count }.by(1)
+    end
+  end
+
   before { @match = Match.new(initiator_id: 1, invited_id: 2, status: "finished", wins: 5, loses: 4) }
   
   subject { @match }
@@ -118,7 +151,7 @@ describe Match do
         expect(match.invited(true).robustness).to eq(4)
       end
 
-       it "changes ratings according the Formulae after match was finished" do
+       it "changes ratings according the Formula after match was finished" do
         match.status = 'finished'
         match.wins = 3
         match.loses = 1
@@ -128,7 +161,7 @@ describe Match do
         expect(match.invited(true).rating).to eq(432)
       end
 
-      it "changes ratings according the Formulae after match was finished" do
+      it "changes ratings according the Formula after match was finished" do
         match.initiator.rating = 550
         match.initiator.robustness = 50
 
