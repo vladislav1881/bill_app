@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129050455) do
+ActiveRecord::Schema.define(version: 20140214080029) do
+
+  create_table "clubs", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clubs_users", id: false, force: true do |t|
+    t.integer "club_id"
+    t.integer "user_id"
+  end
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id",   default: 0

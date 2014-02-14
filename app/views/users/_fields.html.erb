@@ -6,6 +6,9 @@
 <%= f.label t(:email) %>
 <%= f.text_field :email %>
 
+<%= f.label t(:clubs) %>
+<%= f.collection_select :club_ids, Club.order(:name), :id, :name, {  include_blank: true }, size: 3, multiple: true %>
+
 <%= f.label t(:password) %>
 <%= f.password_field :password %>
 

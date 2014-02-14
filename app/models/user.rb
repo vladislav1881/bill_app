@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
                              class_name: "Match"
   has_many :matches_by_user_invited, foreign_key: "invited_id",
                              class_name: "Match"
+  has_and_belongs_to_many :clubs
   has_attached_file :avatar, :styles => { :large => '300x>', :medium => "130x130>", :thumb => "100x100>", xs: "50x50#", xxs: "30x30#" }, 
                     :default_url => "/images/missing_:style.png"
 # to implement it with new avatars run in console: User.all.each { |u| u.avatar.reprocess! if u.avatar? }

@@ -1,4 +1,6 @@
 BillApp::Application.routes.draw do
+  resources :clubs
+
   resources :photos
 
   resources :users do
