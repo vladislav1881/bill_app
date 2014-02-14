@@ -24,7 +24,7 @@
       %th
 
   - @matches.each do |m|
-    %tr
+    %tr[m]
       %td
         = link_to m.initiator.name, m.initiator
       %td

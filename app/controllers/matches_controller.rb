@@ -23,7 +23,7 @@ class MatchesController < ApplicationController
       flash[:success] = "Match created"
   	  redirect_to matches_path
     else
-      puts @match.errors.inspect
+      logger.fatal @match.errors.inspect
       flash.now[:error] = "Match not created: please fill in wins and loses of finished match"
       render 'new'
     end

@@ -64,7 +64,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :club_ids, :avatar)
+                                   :password_confirmation, { :club_ids => [] }, :avatar)
     end
 
     # Before filters
